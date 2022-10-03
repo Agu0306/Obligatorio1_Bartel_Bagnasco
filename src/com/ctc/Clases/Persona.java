@@ -1,4 +1,4 @@
-package com.ctc;
+package com.ctc.Clases;
 
 public class Persona {
     private String _nombre;

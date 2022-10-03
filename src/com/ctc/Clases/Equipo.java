@@ -1,11 +1,14 @@
-package com.ctc;
+package com.ctc.Clases;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Equipo {
     private byte _id;
     private String _nombre;
     private Tecnico _tecnico;
+    private List<Jugador> _listaJugadores;
     private List<Jugador> _listatitulares;
     private List<Jugador> _listasuplentes;
 
@@ -49,12 +52,21 @@ public class Equipo {
         this._listasuplentes = _listasuplentes;
     }
 
-    public Equipo(Byte pId, String pNombre, Tecnico pTecnico, List<Jugador> pListaTitulares, List<Jugador> pListaSuplentes) {
+    public List<Jugador> get_listaJugadores() {
+        return _listaJugadores;
+    }
+
+    public void set_listaJugadores(List<Jugador> _listaJugadores) {
+        this._listaJugadores = _listaJugadores;
+    }
+
+    public Equipo(Byte pId, String pNombre, Tecnico pTecnico, List<Jugador> pListaTitulares, List<Jugador> pListaSuplentes, List<Jugador> pListaJugadores) {
         this._id = pId;
         this._nombre = pNombre;
         this._tecnico = pTecnico;
         this._listatitulares = pListaTitulares;
         this._listasuplentes = pListaSuplentes;
+        this._listaJugadores = pListaJugadores;
     }
 
     public Equipo(){ }
