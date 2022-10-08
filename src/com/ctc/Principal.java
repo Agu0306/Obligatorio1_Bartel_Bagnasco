@@ -18,6 +18,7 @@ public class Principal {
             System.out.println("0- Salir");
             System.out.println("1- Expulsar jugador");
             System.out.println("2- Anotar gol");
+            System.out.println("3- Cambiar jugador");
             opcion = scan.nextByte();
             switch (opcion) {
                 case 0:
@@ -28,6 +29,9 @@ public class Principal {
                     break;
                 case 2:
                     Metodo.anotarGol();
+                    break;
+                case 3:
+                    Metodo.cambiarJugador();
                     break;
                 default:
                     System.out.println("Número fuera de rango. Ingrese otro");

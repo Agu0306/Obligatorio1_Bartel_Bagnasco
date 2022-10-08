@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dcab3882-d963-4e75-bacf-4562326a1d13" name="Changes" comment="">
-      <changelist_data name="Agustina" email="" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Obligatorio1_Bartel_Bagnasco.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ctc/Arbitro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ctc/Equipo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ctc/Jugador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ctc/Persona.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ctc/Principal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/ctc/Tecnico.java" afterDir="false" />
+    <list default="true" id="a02ed5bf-16b9-4feb-a014-b53b9b44348b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/obligatorio/com/ctc/Clases/Equipo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/obligatorio/com/ctc/Clases/Jugador.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/obligatorio/com/ctc/Metodos/Metodo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/ctc/Metodos/Metodo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/obligatorio/com/ctc/Arbitro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/obligatorio/com/ctc/Clases/Arbitro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/obligatorio/com/ctc/Equipo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/obligatorio/com/ctc/Jugador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/obligatorio/com/ctc/Persona.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/obligatorio/com/ctc/Clases/Persona.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/obligatorio/com/ctc/Principal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/obligatorio/com/ctc/Principal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/obligatorio/com/ctc/Tecnico.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/obligatorio/com/ctc/Clases/Tecnico.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ctc/Arbitro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ctc/Clases/Arbitro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ctc/Equipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ctc/Clases/Equipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ctc/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ctc/Clases/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ctc/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ctc/Clases/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ctc/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ctc/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ctc/Tecnico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ctc/Clases/Tecnico.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,18 +32,12 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="Agustina" />
-      </list>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2Fcao9lpZrxV93XgC9zwwVqNmZv" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2ExDvdd2i6icKs8eBB3tx398gyH" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -48,17 +45,19 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/Clase/Diseño y desarrollo de aplicaciones (Java)/obligatorio"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="dcab3882-d963-4e75-bacf-4562326a1d13" name="Changes" comment="" />
-      <created>1664794004220</created>
+      <changelist id="a02ed5bf-16b9-4feb-a014-b53b9b44348b" name="Changes" comment="" />
+      <created>1663528576763</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1664794004220</updated>
+      <updated>1663528576763</updated>
     </task>
     <servers />
   </component>
@@ -72,20 +71,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/ctc/Tecnico.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.util.InputMismatchException" package="java.util" />
-          <option name="timeStamp" value="2" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

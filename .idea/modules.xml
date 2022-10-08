@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Obligatorio1_Bartel_Bagnasco.iml" filepath="$PROJECT_DIR$/Obligatorio1_Bartel_Bagnasco.iml" />
+      <module fileurl="file://$PROJECT_DIR$/obligatorio.iml" filepath="$PROJECT_DIR$/obligatorio.iml" />
     </modules>
   </component>
 </project>

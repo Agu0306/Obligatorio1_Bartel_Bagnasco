@@ -1,11 +1,13 @@
 package com.ctc.Clases;
 
-public class Jugador extends Persona{
+public class Jugador extends Persona {
     private String _puesto;
     private Byte _numero;
     private Byte _edad;
     private String _estado;
-    private Byte _golesPartido = 0;
+    private Byte _golesPartido;
+
+    private Boolean _cambiable;
 
     public String get_puesto() {
         return _puesto;
@@ -29,27 +31,32 @@ public class Jugador extends Persona{
         this._edad = _edad;
     }
 
-    public String get_estado() { return _estado;}
+    public String get_estado() { return _estado; }
 
-    public void set_estado(String _estado) { this._estado = _estado;}
+    public void set_estado(String _estado) { this._estado = _estado; }
 
-    public Byte getGolesPartido() {
-        return _golesPartido;
-    }
+    public Byte getGolesPartido() { return _golesPartido; }
 
     public void setGolesPartido(Byte golesPartido) {
         this._golesPartido = golesPartido;
     }
-    public Jugador(String pNombre, String pApellido, String pPuesto, Byte pNumero, Byte pEdad, String pEstado, Byte pGoles){
+
+    public Boolean get_cambiable() { return _cambiable; }
+
+    public void setCambiable(Boolean _cambiable) { this._cambiable = _cambiable; }
+
+    public Jugador(String pNombre, String pApellido, String pPuesto, Byte pNumero, Byte pEdad, String pEstado, Byte pGoles, Boolean pCambiable) {
         super(pNombre, pApellido);
         this._puesto = pPuesto;
         this._numero = pNumero;
         this._edad = pEdad;
         this._estado = pEstado;
         this._golesPartido = pGoles;
+        this._cambiable = pCambiable;
     }
 
-    public Jugador(){}
+    public Jugador() {
+    }
 
     @Override
     public String toString() {
