@@ -5,8 +5,7 @@ public class Jugador extends Persona {
     private Byte _numero;
     private Byte _edad;
     private String _estado;
-    private Byte _golesPartido;
-
+    private Byte _golesPartido = 0;
     private Boolean _cambiable;
 
     public String get_puesto() {

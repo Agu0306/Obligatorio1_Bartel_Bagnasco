@@ -13,10 +13,14 @@ public class Metodo {
     public static List<Jugador> jugadoresEquipoLocal = new ArrayList<>();
     public static List<Jugador> jugadoresTitularesEquipoLocal = new ArrayList<>();
     public static List<Jugador> jugadoresSuplentesEquipoLocal = new ArrayList<>();
+
+    public static List<Jugador> golesEquipoLocal = new ArrayList<>();
     public static Equipo equipoVisitante = new Equipo();
     public static List<Jugador> jugadoresEquipoVisitante = new ArrayList<>();
     public static List<Jugador> jugadoresTitularesEquipoVisitante = new ArrayList<>();
     public static List<Jugador> jugadoresSuplentesEquipoVisitante = new ArrayList<>();
+
+    public static List<Jugador> golesEquipoVisitante = new ArrayList<>();
     public static List<Arbitro> ternaArbitral = new ArrayList<>();
     public static List<Jugador> jugadoresExpulsados = new ArrayList<>();
 
@@ -309,13 +313,30 @@ public class Metodo {
         Scanner scan = new Scanner(System.in);
 
         int minutos;
+        int golesEquipoL = 0;
+        int golesEquipoV = 0;
 
         System.out.println("");
         System.out.println("Ingrese los minutos jugados");
         minutos = scan.nextInt();
         partido.set_minutosJugados(minutos);
+        System.out.println("");
+
+        System.out.println("Fin del partido");
 
         System.out.println("");
+
+        System.out.println("Resultado: " );
+        for (Jugador jugadorEquipoL : golesEquipoLocal) {
+            golesEquipoL += jugadorEquipoL.getGolesPartido();
+        }
+        for (Jugador jugadorEquipoV : golesEquipoVisitante) {
+            golesEquipoV += jugadorEquipoV.getGolesPartido();
+        }
+        System.out.println(equipoLocal.get_nombre() + " " + golesEquipoL + " - " + golesEquipoV + " " + equipoVisitante.get_nombre());
+
+        System.out.println("");
+
         System.out.println("Equipo local: " + equipoLocal.get_nombre());
         System.out.println(equipoLocal.get_tecnico());
 
@@ -349,19 +370,21 @@ public class Metodo {
         System.out.println(jugadoresExpulsados);
 
         System.out.println("");
+
         System.out.println("Goleadores: ");
-        for (byte i = 0; i < equipoLocal.get_listaJugadores().size(); i++) {
-            if (equipoLocal.get_listaJugadores().get(i).getGolesPartido() > 0) {
-                System.out.println(equipoLocal.get_nombre() + ":");
-                System.out.println("Jugador: " + equipoLocal.get_listaJugadores().get(i).get_numero() + " " + equipoLocal.get_listaJugadores().get(i).get_nombre() + " " + equipoLocal.get_listaJugadores().get(i).get_apellido() + " - Goles: " + equipoLocal.get_listaJugadores().get(i).getGolesPartido());
-            }
+        System.out.println("Equipo: " + equipoLocal.get_nombre());
+        for (byte i = 0; i < golesEquipoLocal.size(); i++) {
+            System.out.println("Jugador: " + golesEquipoLocal.get(i).get_numero() + " " + golesEquipoLocal.get(i).get_nombre() + " " + golesEquipoLocal.get(i).get_apellido() + " - Goles: " + golesEquipoLocal.get(i).getGolesPartido());
         }
 
-        for (byte i = 0; i < equipoVisitante.get_listaJugadores().size(); i++) {
-            if (equipoVisitante.get_listaJugadores().get(i).getGolesPartido() > 0) {
-                System.out.println("Jugador: " + equipoVisitante.get_listaJugadores().get(i).get_numero() + " " + equipoVisitante.get_listaJugadores().get(i).get_nombre() + " " + equipoVisitante.get_listaJugadores().get(i).get_apellido() + " - Goles: " + equipoVisitante.get_listaJugadores().get(i).getGolesPartido());
-            }
+        System.out.println("");
+
+        System.out.println("Equipo: " + equipoVisitante.get_nombre());
+        for (byte j = 0; j < golesEquipoVisitante.size(); j++) {
+            System.out.println("Jugador: " + golesEquipoVisitante.get(j).get_numero() + " " + golesEquipoVisitante.get(j).get_nombre() + " " + golesEquipoVisitante.get(j).get_apellido() + " - Goles: " + golesEquipoVisitante.get(j).getGolesPartido());
         }
+
+        System.out.println("");
 
         System.out.println("Minutos jugados: " + partido.get_minutosJugados());
     }
@@ -424,6 +447,7 @@ public class Metodo {
 
             for (byte i = 0; i < equipoLocal.get_listatitulares().size(); i++) {
                 if (idequipo == 1 && equipoLocal.get_listatitulares().get(i).get_numero() == numero) {
+                    golesEquipoLocal.add(equipoLocal.get_listatitulares().get(i));
                     equipoLocal.get_listatitulares().get(i).setGolesPartido((byte) (equipoLocal.get_listatitulares().get(i).getGolesPartido() + 1));
                     System.out.println("Gol de jugador " + equipoLocal.get_listatitulares().get(i).get_nombre() + " " + equipoLocal.get_listatitulares().get(i).get_apellido() + " ingresado con éxito.");
                 }
@@ -431,6 +455,7 @@ public class Metodo {
 
             for (byte j = 0; j < equipoVisitante.get_listatitulares().size(); j++) {
                 if (idequipo == 2 && equipoVisitante.get_listatitulares().get(j).get_numero() == numero) {
+                    golesEquipoVisitante.add(equipoVisitante.get_listatitulares().get(j));
                     equipoVisitante.get_listatitulares().get(j).setGolesPartido((byte) (equipoVisitante.get_listatitulares().get(j).getGolesPartido() + 1));
                     System.out.println("Gol de jugador " + equipoVisitante.get_listatitulares().get(j).get_nombre() + " " + equipoVisitante.get_listatitulares().get(j).get_apellido() + " ingresado con éxito.");
                 }
