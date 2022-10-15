@@ -69,7 +69,7 @@ public class Equipo {
         this._listaJugadores = pListaJugadores;
     }
 
-    public Equipo(){ }
+    public Equipo(){}
 
     @Override
     public String toString() {

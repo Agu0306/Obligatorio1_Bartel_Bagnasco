@@ -54,8 +54,7 @@ public class Jugador extends Persona {
         this._cambiable = pCambiable;
     }
 
-    public Jugador() {
-    }
+    public Jugador(){}
 
     @Override
     public String toString() {

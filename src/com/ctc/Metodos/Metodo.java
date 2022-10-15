@@ -27,7 +27,7 @@ public class Metodo {
     //endregion
 
     //region Métodos auxiliares equipos
-    public static Jugador BuscarJugadorEquipoLocal(byte pNumero) {
+    public static Jugador BuscarJugadorEquipoLocal(byte pNumero) { // Buscar jugador para verificar que el número ingresado sea diferente.
         for (Jugador jugador : jugadoresEquipoLocal) {
             if (jugador.get_numero() == pNumero) {
                 return jugador;
@@ -35,7 +35,7 @@ public class Metodo {
         }
         return null;
     }
-    public static Jugador BuscarJugadorEquipoVisitante(byte pNumero) {
+    public static Jugador BuscarJugadorEquipoVisitante(byte pNumero) { // Buscar jugador para verificar que el número ingresado sea diferente.
         for (Jugador jugador : jugadoresEquipoVisitante) {
             if (jugador.get_numero() == pNumero) {
                 return jugador;
@@ -52,7 +52,7 @@ public class Metodo {
         String nombre, apellido, puesto, estado, nombreEquipo;
         byte numero, edad;
 
-        System.out.println("Ingrese nombre del equipo local");
+        System.out.println("Ingrese nombre del equipo local"); // Pedimos los datos a ingresar.
         nombreEquipo = scan.next();
 
         System.out.println("Ingrese nombre del DT de " + nombreEquipo);
@@ -65,7 +65,7 @@ public class Metodo {
         edad = scan.nextByte();
         Tecnico dt = new Tecnico(nombre, apellido, edad);
 
-        while (jugadoresTitularesEquipoLocal.size() < 3) {
+        while (jugadoresTitularesEquipoLocal.size() < 11) { // Pedimos que ingrese jugadores hasta que la lista de titulares tenga 11 objetos.
             System.out.println("Ingrese nombre del jugador titular de " + nombreEquipo);
             nombre = scan.next();
 
@@ -93,7 +93,7 @@ public class Metodo {
             }
         }
 
-        while (jugadoresSuplentesEquipoLocal.size() < 1) {
+        while (jugadoresSuplentesEquipoLocal.size() < 5) { // Pedimos que ingrese jugadores hasta que la lista de suplentes tenga 5 objetos.
             System.out.println("Ingrese nombre del jugador suplente de " + nombreEquipo);
             nombre = scan.next();
 
@@ -112,7 +112,7 @@ public class Metodo {
             estado = "Suplente";
 
             Jugador jugador = new Jugador(nombre, apellido, puesto, numero, edad, estado, (byte) 0, true);
-            if (BuscarJugadorEquipoLocal(jugador.get_numero()) == null) {
+            if (BuscarJugadorEquipoLocal(jugador.get_numero()) == null) { // Si el número del jugador ingresado es diferente a cualquiera de los ya ingresados, lo agrega.
                 jugadoresEquipoLocal.add(jugador);
                 jugadoresSuplentesEquipoLocal.add(jugador);
                 System.out.println("Ingresado con éxito");
@@ -122,7 +122,7 @@ public class Metodo {
         }
         equipoLocal = new Equipo((byte) 1, nombreEquipo, dt, jugadoresTitularesEquipoLocal, jugadoresSuplentesEquipoLocal, jugadoresEquipoLocal);
 
-        if (jugadoresTitularesEquipoLocal.size() == 3 && jugadoresSuplentesEquipoLocal.size() == 1) {
+        if (jugadoresTitularesEquipoLocal.size() == 11 && jugadoresSuplentesEquipoLocal.size() == 5) {
             return true;
         }
         return false;
@@ -133,7 +133,7 @@ public class Metodo {
         String nombre, apellido, puesto, estado, nombreEquipo;
         byte numero, edad;
 
-        System.out.println("Ingrese nombre del equipo visitante");
+        System.out.println("Ingrese nombre del equipo visitante"); // Pedimos los datos a ingresar.
         nombreEquipo = scan.next();
 
         System.out.println("Ingrese nombre del DT de " + nombreEquipo);
@@ -146,7 +146,7 @@ public class Metodo {
         edad = scan.nextByte();
         Tecnico dt = new Tecnico(nombre, apellido, edad);
 
-        while (jugadoresTitularesEquipoVisitante.size() < 3) {
+        while (jugadoresTitularesEquipoVisitante.size() < 11) { // Pedimos que ingrese jugadores hasta que la lista de titulares tenga 11 objetos.
             System.out.println("Ingrese nombre del jugador titular de " + nombreEquipo);
             nombre = scan.next();
 
@@ -165,7 +165,7 @@ public class Metodo {
             estado = "Titular";
 
             Jugador jugador = new Jugador(nombre, apellido, puesto, numero, edad, estado, (byte) 0, true);
-            if (BuscarJugadorEquipoVisitante(jugador.get_numero()) == null) {
+            if (BuscarJugadorEquipoVisitante(jugador.get_numero()) == null) { // Si el número del jugador ingresado es diferente a cualquiera de los ya ingresados, lo agrega.
                 jugadoresEquipoVisitante.add(jugador);
                 jugadoresTitularesEquipoVisitante.add(jugador);
                 System.out.println("Ingresado con éxito");
@@ -174,7 +174,7 @@ public class Metodo {
             }
         }
 
-        while (jugadoresSuplentesEquipoVisitante.size() < 1) {
+        while (jugadoresSuplentesEquipoVisitante.size() < 5) { // Pedimos que ingrese jugadores hasta que la lista de suplentes tenga 5 objetos.
             System.out.println("Ingrese nombre del jugador suplente de " + nombreEquipo);
             nombre = scan.next();
 
@@ -203,7 +203,7 @@ public class Metodo {
         }
         equipoVisitante = new Equipo((byte) 2, nombreEquipo, dt, jugadoresTitularesEquipoVisitante, jugadoresSuplentesEquipoVisitante, jugadoresEquipoVisitante);
 
-        if (jugadoresTitularesEquipoVisitante.size() == 3 && jugadoresSuplentesEquipoVisitante.size() == 1) {
+        if (jugadoresTitularesEquipoVisitante.size() == 11 && jugadoresSuplentesEquipoVisitante.size() == 5) {
             return true;
         }
         return false;
@@ -213,7 +213,7 @@ public class Metodo {
 
         String nombre, apellido, puesto;
 
-        for (byte i = 1; i < 4; i++) {
+        for (byte i = 1; i < 4; i++) { // Pedimos que ingrese 3 arbitros
             System.out.println("Ingrese nombre del arbitro " + i);
             nombre = scan.next();
 
@@ -224,7 +224,7 @@ public class Metodo {
             puesto = scan.next();
 
             Arbitro arbitro = new Arbitro(nombre, apellido, puesto);
-            ternaArbitral.add(arbitro);
+            ternaArbitral.add(arbitro); // Agregamos el elemento a la lista de arbitros.
         }
 
         if (ternaArbitral.size() == 3) {
@@ -238,7 +238,7 @@ public class Metodo {
         String estadio, fecha, hora, clima;
         int minutos = 0;
 
-        System.out.println("Ingrese estadio");
+        System.out.println("Ingrese estadio"); // Pedimos los datos.
         estadio = scan.nextLine();
 
         System.out.println("Ingrese fecha");
@@ -250,7 +250,7 @@ public class Metodo {
         System.out.println("Ingrese clima");
         clima = scan.next();
 
-        partido = new Partido(estadio, fecha, hora, clima, minutos);
+        partido = new Partido(estadio, fecha, hora, clima, minutos); // Instanciamos la clase partido, y se la asignamos a la variable global antes declarada.
 
         return partido;
     }
@@ -260,16 +260,16 @@ public class Metodo {
     public static void IniciarPartido() {
         System.out.println("Iniciando partido");
         System.out.println("");
-        if (IngresarDatosPartido() != null && IngresarArbitros() && IngresarEquipoLocal() && IngresarEquipoVisitante()) {
+        if (IngresarDatosPartido() != null && IngresarArbitros() && IngresarEquipoLocal() && IngresarEquipoVisitante()) { // Verificamos que los datos del partido, la terna arbitral, y los datos de ambos equipos estén ingresados.
             System.out.println("Iniciando partido");
             System.out.println("Arbitros: ");
-            for (Arbitro arbitro : ternaArbitral) {
+            for (Arbitro arbitro : ternaArbitral) { // Mostramos la terna arbitral.
                 System.out.println(arbitro);
             }
 
             System.out.println("");
 
-            System.out.println("Datos del partido: ");
+            System.out.println("Datos del partido: "); // Mostramos los datos del partido.
             System.out.println("Estadio: " + partido.get_estadio());
             System.out.println("Fecha: " + partido.get_fecha());
             System.out.println("Hora: " + partido.get_hora());
@@ -277,7 +277,7 @@ public class Metodo {
 
             System.out.println("");
 
-            System.out.println("Equipo local: " + equipoLocal.get_nombre());
+            System.out.println("Equipo local: " + equipoLocal.get_nombre()); // Mostramos los datos de los equipos.
             System.out.println(equipoLocal.get_tecnico());
 
             System.out.println("Titulares: ");
@@ -308,7 +308,6 @@ public class Metodo {
             System.out.println("No se puede iniciar el partido porque falta ingresar datos");
         }
     }
-
     public static void finalizarPartido() {
         Scanner scan = new Scanner(System.in);
 
@@ -319,14 +318,14 @@ public class Metodo {
         System.out.println("");
         System.out.println("Ingrese los minutos jugados");
         minutos = scan.nextInt();
-        partido.set_minutosJugados(minutos);
+        partido.set_minutosJugados(minutos); // Le asignamos los minutos jugados al objeto partido.
         System.out.println("");
 
         System.out.println("Fin del partido");
 
         System.out.println("");
 
-        System.out.println("Resultado: " );
+        System.out.println("Resultado: " ); // Mostramos el resultado del partido.
         for (Jugador jugadorEquipoL : golesEquipoLocal) {
             golesEquipoL += jugadorEquipoL.getGolesPartido();
         }
@@ -337,7 +336,7 @@ public class Metodo {
 
         System.out.println("");
 
-        System.out.println("Equipo local: " + equipoLocal.get_nombre());
+        System.out.println("Equipo local: " + equipoLocal.get_nombre()); // Mostramos los datos del equipo local al final del partido.
         System.out.println(equipoLocal.get_tecnico());
 
         System.out.println("Titulares: ");
@@ -352,7 +351,7 @@ public class Metodo {
 
         System.out.println("");
 
-        System.out.println("Equipo visitante: " + equipoVisitante.get_nombre());
+        System.out.println("Equipo visitante: " + equipoVisitante.get_nombre()); // Mostramos los datos del equipo visitante al final del partido.
         System.out.println(equipoVisitante.get_tecnico());
 
         System.out.println("Titulares: ");
@@ -366,12 +365,13 @@ public class Metodo {
         }
 
         System.out.println("");
-        System.out.println("Jugadores expulsados: ");
+
+        System.out.println("Jugadores expulsados: "); // Mostramos los jugadores que fueron expulsados.
         System.out.println(jugadoresExpulsados);
 
         System.out.println("");
 
-        System.out.println("Goleadores: ");
+        System.out.println("Goleadores: "); // Mostramos los jugadores que hicieron uno o más goles.
         System.out.println("Equipo: " + equipoLocal.get_nombre());
         for (byte i = 0; i < golesEquipoLocal.size(); i++) {
             System.out.println("Jugador: " + golesEquipoLocal.get(i).get_numero() + " " + golesEquipoLocal.get(i).get_nombre() + " " + golesEquipoLocal.get(i).get_apellido() + " - Goles: " + golesEquipoLocal.get(i).getGolesPartido());
@@ -386,9 +386,8 @@ public class Metodo {
 
         System.out.println("");
 
-        System.out.println("Minutos jugados: " + partido.get_minutosJugados());
+        System.out.println("Minutos jugados: " + partido.get_minutosJugados()); // Mostramos los minutos jugados.
     }
-
     public static void expulsarJugador() {
         Scanner scan = new Scanner(System.in);
         byte idequipo;
@@ -399,38 +398,37 @@ public class Metodo {
         System.out.println("2- " + equipoVisitante.get_nombre());
         idequipo = scan.nextByte();
 
-        if (idequipo == 1 || idequipo == 2) {
+        if (idequipo == 1 || idequipo == 2) { // Verifica si el id del equipo es válido.
             System.out.println("Ingrese número del jugador");
             numero = scan.nextByte();
 
-            for (byte j = 0; j < equipoLocal.get_listatitulares().size(); j++) {
-                for (byte k = 0; k < equipoLocal.get_listasuplentes().size(); k++) {
-                    if (idequipo == 1 && equipoLocal.get_listatitulares().get(j).get_numero() == numero) {
+            for (byte j = 0; j < equipoLocal.get_listatitulares().size(); j++) { // Recorremos la lista de titulares del equipo local.
+                for (byte k = 0; k < equipoLocal.get_listasuplentes().size(); k++) { // Recorremos la lista de suplentes del equipo local.
+                    if (idequipo == 1 && equipoLocal.get_listatitulares().get(j).get_numero() == numero) { // Verificamos si el número de jugador ingresado está en la lista de titulares.
                         jugadoresExpulsados.add(equipoLocal.get_listatitulares().get(j));
                         equipoLocal.get_listatitulares().remove(equipoLocal.get_listatitulares().get(j));
-                    } else if (idequipo == 1 && equipoLocal.get_listasuplentes().get(k).get_numero() == numero) {
+                    } else if (idequipo == 1 && equipoLocal.get_listasuplentes().get(k).get_numero() == numero) { // Verificamos si el número de jugador ingresado está en la lista de suplentes.
                         jugadoresExpulsados.add(equipoLocal.get_listasuplentes().get(k));
                         equipoLocal.get_listasuplentes().remove(equipoLocal.get_listasuplentes().get(k));
                     }
                 }
             }
 
-            for (byte j = 0; j < equipoVisitante.get_listatitulares().size(); j++) {
-                for (byte k = 0; k < equipoVisitante.get_listasuplentes().size(); k++) {
-                    if (idequipo == 2 && equipoVisitante.get_listatitulares().get(j).get_numero() == numero) {
+            for (byte j = 0; j < equipoVisitante.get_listatitulares().size(); j++) { // // Recorremos la lista de titulares del equipo visitante.
+                for (byte k = 0; k < equipoVisitante.get_listasuplentes().size(); k++) { // Recorremos la lista de suplentes del equipo visitante.
+                    if (idequipo == 2 && equipoVisitante.get_listatitulares().get(j).get_numero() == numero) { // Verificamos si el número de jugador ingresado está en la lista de titulares.
                         jugadoresExpulsados.add(equipoVisitante.get_listatitulares().get(j));
                         equipoVisitante.get_listatitulares().remove(equipoVisitante.get_listatitulares().get(j));
-                    } else if (idequipo == 2 && equipoVisitante.get_listasuplentes().get(k).get_numero() == numero) {
+                    } else if (idequipo == 2 && equipoVisitante.get_listasuplentes().get(k).get_numero() == numero) { // Verificamos si el número de jugador ingresado está en la lista de suplentes.
                         jugadoresExpulsados.add(equipoVisitante.get_listasuplentes().get(k));
                         equipoVisitante.get_listasuplentes().remove(equipoVisitante.get_listasuplentes().get(k));
                     }
                 }
             }
         } else {
-            System.out.println("No existe el equipo");
+            System.out.println("No existe el equipo"); // Si el ID del equipo ingresado no es válido, se informa del error.
         }
     }
-
     public static void anotarGol() {
         Scanner scan = new Scanner(System.in);
         byte idequipo;
@@ -441,30 +439,29 @@ public class Metodo {
         System.out.println("2- " + equipoVisitante.get_nombre());
         idequipo = scan.nextByte();
 
-        if (idequipo == 1 || idequipo == 2) {
+        if (idequipo == 1 || idequipo == 2) { // Verificamos si el ID del equipo es válido.
             System.out.println("Ingrese número del jugador");
             numero = scan.nextByte();
 
-            for (byte i = 0; i < equipoLocal.get_listatitulares().size(); i++) {
-                if (idequipo == 1 && equipoLocal.get_listatitulares().get(i).get_numero() == numero) {
+            for (byte i = 0; i < equipoLocal.get_listatitulares().size(); i++) { // Recorremos la lista de titulares del equipo local.
+                if (idequipo == 1 && equipoLocal.get_listatitulares().get(i).get_numero() == numero) { // Verificamos si el número de jugador ingresado está en la lista de titulares.
                     golesEquipoLocal.add(equipoLocal.get_listatitulares().get(i));
                     equipoLocal.get_listatitulares().get(i).setGolesPartido((byte) (equipoLocal.get_listatitulares().get(i).getGolesPartido() + 1));
                     System.out.println("Gol de jugador " + equipoLocal.get_listatitulares().get(i).get_nombre() + " " + equipoLocal.get_listatitulares().get(i).get_apellido() + " ingresado con éxito.");
                 }
             }
 
-            for (byte j = 0; j < equipoVisitante.get_listatitulares().size(); j++) {
-                if (idequipo == 2 && equipoVisitante.get_listatitulares().get(j).get_numero() == numero) {
+            for (byte j = 0; j < equipoVisitante.get_listatitulares().size(); j++) { // Recorremos la lista de titulares del equipo visitante.
+                if (idequipo == 2 && equipoVisitante.get_listatitulares().get(j).get_numero() == numero) { // Verificamos si el número de jugador ingresado está en la lista de titulares.
                     golesEquipoVisitante.add(equipoVisitante.get_listatitulares().get(j));
                     equipoVisitante.get_listatitulares().get(j).setGolesPartido((byte) (equipoVisitante.get_listatitulares().get(j).getGolesPartido() + 1));
                     System.out.println("Gol de jugador " + equipoVisitante.get_listatitulares().get(j).get_nombre() + " " + equipoVisitante.get_listatitulares().get(j).get_apellido() + " ingresado con éxito.");
                 }
             }
         } else {
-            System.out.println("No existe el equipo");
+            System.out.println("No existe el equipo"); // Si el ID de equipo ingresado no es válido, se informa del error.
         }
     }
-
     public static void cambiarJugador(){
         Scanner scan = new Scanner(System.in);
         byte idequipo;
@@ -476,47 +473,45 @@ public class Metodo {
         System.out.println("2- " + equipoVisitante.get_nombre());
         idequipo = scan.nextByte();
 
-        if (idequipo == 1) {
+        if (idequipo == 1) { // Verificamos si el id del equipo ingresado es el del equipo local.
             System.out.println("Ingrese número del jugador titular del equipo local");
             numeroTitular = scan.nextByte();
 
             System.out.println("Ingrese número del jugador suplente del equipo local");
             numeroSuplente = scan.nextByte();
 
-            for (byte i = 0; i < equipoLocal.get_listatitulares().size(); i++) {
-                for(byte j = 0; j < equipoLocal.get_listasuplentes().size(); j++){
-                    if(equipoLocal.get_listatitulares().get(i).get_numero() == numeroTitular && equipoLocal.get_listatitulares().get(i).get_cambiable()){
-                        if(equipoLocal.get_listasuplentes().get(j).get_numero() == numeroSuplente && equipoLocal.get_listasuplentes().get(j).get_cambiable()){
-                            equipoLocal.get_listatitulares().get(i).setCambiable(false);
-                            equipoLocal.get_listasuplentes().add(equipoLocal.get_listatitulares().get(i));
-                            equipoLocal.get_listatitulares().remove(equipoLocal.get_listatitulares().get(i));
+            for (byte i = 0; i < equipoLocal.get_listatitulares().size(); i++) { // Recorremos la lista de titulares.
+                for(byte j = 0; j < equipoLocal.get_listasuplentes().size(); j++){ // Recorremos la lista de suplentes.
+                    if(equipoLocal.get_listatitulares().get(i).get_numero() == numeroTitular && equipoLocal.get_listatitulares().get(i).get_cambiable()){ // Verificamos si uno de los números ingresados es el de un jugador titular y el estado 'cambiable' es true.
+                        if(equipoLocal.get_listasuplentes().get(j).get_numero() == numeroSuplente && equipoLocal.get_listasuplentes().get(j).get_cambiable()){ // Verificamos si el otro número ingresado es el de un jugador suplente y el estado 'cambiable' es true.
+                            equipoLocal.get_listatitulares().get(i).setCambiable(false); // Cambiamos el estado de cambiable a false, esto para que no pueda volver a ingresar.
+                            equipoLocal.get_listasuplentes().add(equipoLocal.get_listatitulares().get(i)); // Agregamos el jugador que ingresa a la de titulares.
+                            equipoLocal.get_listatitulares().remove(equipoLocal.get_listatitulares().get(i)); // Eliminamos al jugador que sale de la lista de titulares.
 
-                            equipoLocal.get_listasuplentes().get(j).setCambiable(false);
-                            equipoLocal.get_listatitulares().add(equipoLocal.get_listasuplentes().get(j));
-                            equipoLocal.get_listasuplentes().remove(equipoLocal.get_listasuplentes().get(j));
+                            equipoLocal.get_listatitulares().add(equipoLocal.get_listasuplentes().get(j)); // Agregamos al jugador que sale a la lista de suplentes.
+                            equipoLocal.get_listasuplentes().remove(equipoLocal.get_listasuplentes().get(j)); // Eliminamos al jugador que ingresa de la lista de suplentes.
                         }
                     }
                 }
             }
         }
-        else if(idequipo == 2){
+        else if(idequipo == 2){// Verificamos si el id del equipo ingresado es el del equipo visitante.
             System.out.println("Ingrese número del jugador titular del equipo visitante");
             numeroTitular = scan.nextByte();
 
             System.out.println("Ingrese número del jugador suplente del equipo visitante");
             numeroSuplente = scan.nextByte();
 
-            for (byte i = 0; i < equipoVisitante.get_listatitulares().size(); i++) {
-                for(byte j = 0; j < equipoVisitante.get_listasuplentes().size(); j++){
-                    if(equipoVisitante.get_listatitulares().get(i).get_numero() == numeroTitular && equipoVisitante.get_listatitulares().get(i).get_cambiable()){
-                        if(equipoVisitante.get_listasuplentes().get(j).get_numero() == numeroSuplente && equipoVisitante.get_listasuplentes().get(j).get_cambiable()){
-                            equipoVisitante.get_listatitulares().get(i).setCambiable(false);
-                            equipoVisitante.get_listasuplentes().add(equipoVisitante.get_listatitulares().get(i));
-                            equipoVisitante.get_listatitulares().remove(equipoVisitante.get_listatitulares().get(i));
+            for (byte i = 0; i < equipoVisitante.get_listatitulares().size(); i++) { // Recorremos la lista de titulares.
+                for(byte j = 0; j < equipoVisitante.get_listasuplentes().size(); j++){ // Recorremos la lista de suplentes.
+                    if(equipoVisitante.get_listatitulares().get(i).get_numero() == numeroTitular && equipoVisitante.get_listatitulares().get(i).get_cambiable()){ // Verificamos si uno de los números ingresados es el de un jugador titular y el estado 'cambiable' es true.
+                        if(equipoVisitante.get_listasuplentes().get(j).get_numero() == numeroSuplente && equipoVisitante.get_listasuplentes().get(j).get_cambiable()){ // Verificamos si el otro número ingresado es el de un jugador suplente y el estado 'cambiable' es true.
+                            equipoVisitante.get_listatitulares().get(i).setCambiable(false); // Cambiamos el estado de cambiable a false, esto para que no se pueda volver a cambiar por ese jugador.
+                            equipoVisitante.get_listasuplentes().add(equipoVisitante.get_listatitulares().get(i)); // Agregamos el jugador que ingresa a la de titulares.
+                            equipoVisitante.get_listatitulares().remove(equipoVisitante.get_listatitulares().get(i)); // Eliminamos al jugador que sale de la lista de titulares.
 
-                            equipoVisitante.get_listasuplentes().get(j).setCambiable(false);
-                            equipoVisitante.get_listatitulares().add(equipoVisitante.get_listasuplentes().get(j));
-                            equipoVisitante.get_listasuplentes().remove(equipoVisitante.get_listasuplentes().get(j));
+                            equipoVisitante.get_listatitulares().add(equipoVisitante.get_listasuplentes().get(j)); // Agregamos al jugador que sale a la lista de suplentes.
+                            equipoVisitante.get_listasuplentes().remove(equipoVisitante.get_listasuplentes().get(j)); // Eliminamos al jugador que ingresa de la lista de suplentes.
                         }
                     }
                 }

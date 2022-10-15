@@ -12,7 +12,7 @@ public class Arbitro extends Persona{
         this._puesto = pPuesto;
     }
 
-    public Arbitro() {}
+    public Arbitro(){}
 
     @Override
     public String toString() {

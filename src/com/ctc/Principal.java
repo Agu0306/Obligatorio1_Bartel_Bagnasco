@@ -1,7 +1,5 @@
 package com.ctc;
-
 import com.ctc.Metodos.*;
-
 import java.util.Scanner;
 
 public class Principal {

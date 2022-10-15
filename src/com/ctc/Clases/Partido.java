@@ -41,7 +41,6 @@ public class Partido {
     public int get_minutosJugados() {
         return _minutosJugados;
     }
-
     public void set_minutosJugados(int _minutosJugados) {
         this._minutosJugados = _minutosJugados;
     }
